@@ -29,10 +29,9 @@ const Hero = () => {
               ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
               : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
           }
-          transition={{ duration: 1, delay: 0 }}
-          viewport={{ once: false }}
+          transition={{ duration: 1, delay: 1 }}
+          viewport={{ once: true }}
           onViewportEnter={() => setIsInView(true)}
-          onViewportLeave={() => setIsInView(false)}
         >
           {isInView && (
             <Image

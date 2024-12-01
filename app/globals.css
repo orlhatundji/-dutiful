@@ -6,11 +6,14 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #603F8B;
+  --primary-alt: #532F82;
   --secondary: #230b34;
   --tertiary: #383838;
   --stroke: #eeeeff;
+  --stroke2: #63428E;
   --accent: #FCFAFF;
   --black-lite: #464646;
+  --footer-link: #B6B6E5;
 }
 
 body {

@@ -3,7 +3,7 @@ import React from "react";
 
 const Appointments = () => {
   return (
-    <div className="grid grid-cols-1 gap-6 w-full lg:grid-cols-2 justify-start">
+    <div className="grid grid-cols-1 gap-6 w-full lg:grid-cols-2 justify-start pb-20">
       <div className="max-w-[559px] lg:mt-20 xl:mt-36 lg:order-2">
         <h1 className="font-recoleta-alt-bold text-4xl text-secondary">
           Accept and sell appointments
