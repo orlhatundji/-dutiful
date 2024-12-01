@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
+import { motion } from "motion/react";
 import React, { use, useEffect } from "react";
 
 type HamburgerProps = {
   isMenuOpen: boolean;
-  setIsMenuOpen: (value: boolean) => void;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isMobile: boolean;
   setIsMobile: (value: boolean) => void;
+  direction?: "left" | "right";
 };
 
 const Hamburger: React.FC<HamburgerProps> = ({
@@ -15,6 +17,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
   setIsMenuOpen,
   isMobile,
   setIsMobile,
+  direction = "right",
 }) => {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -30,28 +33,36 @@ const Hamburger: React.FC<HamburgerProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile, setIsMobile]);
   return (
-    <button
-      type="button"
-      aria-label="Open menu"
-      className="absolute top-5 right-4 md:hidden text-gray-700 focus:outline-none"
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
-      title={isMenuOpen ? "Close menu" : "Open menu"}
+    <motion.div
+      className="h-5 w-8 flex-col flex justify-between cursor-pointer hover:opacity-85 absolute top-6 right-6 z-50"
+      onClick={() => setIsMenuOpen((prev) => !prev)}
     >
-      <svg
-        className="w-7 h-7"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        ></path>
-      </svg>
-    </button>
+      {Array.from({ length: 3 }).map((_, index) => (
+        <motion.div
+          key={index}
+          className="h-1 bg-primary"
+          initial={false}
+          animate={
+            index === 1
+              ? {
+                  x: isMenuOpen ? (direction === "left" ? "-100%" : "100%") : 0,
+                  opacity: isMenuOpen ? 0 : 1,
+                }
+              : index === 0
+              ? {
+                  y: isMenuOpen ? "150%" : 0,
+                  rotate: isMenuOpen ? 45 : 0,
+                }
+              : {
+                  y: isMenuOpen ? "-250%" : "0%",
+                  rotate: isMenuOpen ? -45 : 0,
+                }
+          }
+          transition={{ duration: 0.3 }}
+          style={{ width: "100%" }}
+        />
+      ))}
+    </motion.div>
   );
 };
 

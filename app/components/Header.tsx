@@ -28,7 +28,7 @@ const Header = () => {
           isMobile && !isMenuOpen ? "hidden" : "relative"
         )}
       >
-        <ul className="flex flex-col gap-4 lg:gap-6 p-0 md:flex-row items-center">
+        <ul className="flex flex-col gap-4 lg:gap-6 p-0 md:flex-row">
           <li>
             {/* Search Icon (Hidden on small screens) */}
             {
