@@ -10,9 +10,9 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   return (
-    <div className="px-8 w-full flex items-center justify-between pt-14">
-      <div className="flex justify-between w-full">
-        <div className="max-w-[559px] md:mt-36">
+    <div className="px-8 w-full lg:flex items-center justify-between pt-10 lg:pt-14 lg:pb-20">
+      <div className="lg:flex justify-between w-full">
+        <div className="max-w-[559px] lg:mt-20 xl:mt-36">
           <h1 className="font-recoleta-alt-bold text-4xl text-secondary">
             List and grow your business  with just few clicks
           </h1>
@@ -23,7 +23,7 @@ const Hero = () => {
         </div>
         {/* <Image src="/hero.png" alt="Hero Image" width={674} height={563} className="" /> */}
         <motion.div
-          className=""
+          className="mt-14 lg:mt-0"
           initial={false}
           animate={
             isLoaded && isInView
