@@ -10,7 +10,7 @@ const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   return (
-    <div className="px-8 w-full lg:flex items-center justify-between pt-10 lg:pt-14 lg:pb-20">
+    <div className="w-full lg:flex items-center justify-between pt-10 lg:pt-14 pb-20">
       <div className="lg:flex justify-between w-full">
         <div className="max-w-[559px] lg:mt-20 xl:mt-36">
           <h1 className="font-recoleta-alt-bold text-4xl text-secondary">
@@ -21,7 +21,6 @@ const Hero = () => {
             service on the best business directory in Nigeria.
           </p>
         </div>
-        {/* <Image src="/hero.png" alt="Hero Image" width={674} height={563} className="" /> */}
         <motion.div
           className="mt-14 lg:mt-0"
           initial={false}
@@ -39,6 +38,7 @@ const Hero = () => {
             <Image
               src="/hero.png"
               alt=""
+              className="max-w-[70%] lg:max-w-full mx-auto lg:mx-0"
               onLoad={() => setIsLoaded(true)}
               width={674}
               height={563}
