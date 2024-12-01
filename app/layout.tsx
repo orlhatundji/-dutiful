@@ -16,6 +16,13 @@ const circularStdMedium = localFont({
   display: "swap",
 });
 
+const circularStdBold = localFont({
+  src: "./fonts/CircularStd-Bold.otf",
+  variable: "--font-CircularStd-Bold",
+  style: "normal",
+  display: "swap",
+});
+
 const recoletaRegular = localFont({
   src: "./fonts/recoleta-regulardemo.otf",
   variable: "--font-recoleta-regular",
@@ -44,7 +51,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={` ${circularStdBook.variable} ${circularStdMedium.variable} 
-            ${recoletaRegular.variable} ${recoletaAltBold.variable} font-circular-std-book  antialiased`}
+            ${recoletaRegular.variable} ${recoletaAltBold.variable} 
+            ${circularStdBold.variable} font-circular-std-book  antialiased`}
       >
         {children}
       </body>

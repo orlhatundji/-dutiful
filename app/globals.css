@@ -8,6 +8,9 @@
   --primary: #603F8B;
   --secondary: #230b34;
   --tertiary: #383838;
+  --stroke: #eeeeff;
+  --accent: #FCFAFF;
+  --black-lite: #464646;
 }
 
 body {
