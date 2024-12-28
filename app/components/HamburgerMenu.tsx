@@ -34,7 +34,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
   }, [isMobile, setIsMobile]);
   return (
     <motion.div
-      className="h-5 w-8 flex-col flex justify-between cursor-pointer hover:opacity-85 absolute top-6 right-6 z-50"
+      className="md:hidden h-5 w-8 flex-col flex justify-between cursor-pointer hover:opacity-85 absolute top-6 right-6 z-50"
       onClick={() => setIsMenuOpen((prev) => !prev)}
     >
       {Array.from({ length: 3 }).map((_, index) => (
